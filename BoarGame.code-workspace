@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../tshirt/product-personalizer--base"
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"esbenp.prettier-vscode"
+		]
+	}
+}
