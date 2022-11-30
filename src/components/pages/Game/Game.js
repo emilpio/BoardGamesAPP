@@ -31,9 +31,7 @@ const Game = ({ id, isFavorite, title, author }) => {
           className={clsx(styles.star_button, isFavorite && styles.active)}>
           <span className='fa fa-star-o' />
         </button>
-        <button
-          onClick={remove}
-          className={clsx(styles.remove_button, isFavorite && styles.active)}>
+        <button onClick={remove} className={clsx(styles.remove_button)}>
           <span className='fa fa-trash' />
         </button>
       </div>

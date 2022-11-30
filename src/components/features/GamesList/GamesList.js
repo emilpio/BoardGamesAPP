@@ -14,30 +14,22 @@ const GamesList = () => {
   const games = useSelector(getAllGames);
   // const { id } = useParams();
 
-  const dispatch = useDispatch();
-
-  const remove = (gameId) => {
-    dispatch(removeGame(gameId));
-  };
-
   // const gameData = useSelector((state) => getGamesById(state, id));
 
   return (
     <article className={styles.column}>
-      <ul className={styles.cards}>
+      {/* <ul className={styles.cards}>
         {games.map((game) => (
           <NavLink key={game.id} to={'game/' + game.id}>
             <li className={styles.card} key={game.id}>
               {game.title} by {game.author}
-              <button onClick={remove}>remove</button>
-              {game.author}
             </li>
           </NavLink>
         ))}
-      </ul>{' '}
+      </ul> */}
       <ul className={styles.cards}>
         {games.map((game) => (
-          <Game key={game.id} title={game.title} />
+          <Game key={game.id} {...game} />
         ))}
       </ul>
       <GameForm />
