@@ -31,7 +31,7 @@ export const update = (payload) => ({ type: UPDATE, payload });
 
 export const fetchGames = (dispatch) => {
   fetch(`${API_URL}/games`)
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((games) => dispatch(updateApiGames(games)));
 };
 
@@ -51,7 +51,7 @@ export const fetchGames = (dispatch) => {
 //   };
 // };
 
-export const updateAddGames = (newGame) => {
+export const updateAddGames = ({ newGame }) => {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -59,7 +59,7 @@ export const updateAddGames = (newGame) => {
   };
 
   return (dispatch) => {
-    fetch(API_URL + '/games', requestOptions)
+    fetch(`${API_URL}/games`, requestOptions)
       .then((response) => response.json())
       .then((newGame) => dispatch(addGame(newGame)))
       .catch((rejected) => {

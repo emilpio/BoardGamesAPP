@@ -3,6 +3,7 @@ import Button from '../../common/Button/Button';
 import styles from './GameForm.module.scss';
 import { addGame } from '../../../redux/GamesReducer';
 import { useDispatch } from 'react-redux';
+import { updateAddGames } from '../../../redux/GamesReducer';
 
 const GameForm = (props) => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const GameForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addGame({ title, author }));
+    dispatch(updateAddGames({ title, author }));
     setTitle('');
     setAuthor('');
   };
